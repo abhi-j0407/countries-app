@@ -35,7 +35,11 @@ const Home = () => {
           </div>
         </form>
       </header>
-      <div className="cards-container">{all && <Card deets={all[0]} />}</div>
+      <div className="cards-container">
+        {all && all.map((country) => (
+          <Card deets={country} key={country.name.common} />
+        ))}
+      </div>
     </main>
   );
 };
