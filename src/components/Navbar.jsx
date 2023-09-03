@@ -5,7 +5,7 @@ import { faMoon } from '@fortawesome/free-regular-svg-icons'
 const Navbar = () => {
   return (
     <nav>
-      <Link to="/">What in the world</Link>
+      <Link to="/" className="logo">Where in the world?</Link>
       <div className="toggle">
               <FontAwesomeIcon icon={faMoon} />
               Dark Mode

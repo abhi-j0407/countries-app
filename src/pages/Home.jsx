@@ -1,5 +1,7 @@
 import { useState, useEffect } from "react";
 import Card from "./../components/Card";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faMagnifyingGlass } from "@fortawesome/free-solid-svg-icons";
 
 const Home = () => {
   const [all, setAll] = useState([]);
@@ -16,21 +18,24 @@ const Home = () => {
   return (
     <main>
       <header>
-        <form>
-          <input type="text" />
-          <select
-            value={filter}
-            defaultValue={"#"}
-            onChange={(e) => setFilter(e.target.value)}
-          >
-            <option value="">Filter by Region</option>
-            <option value="Asia">Asia</option>
-          </select>
+        <form className="form">
+          <div className="search">
+            <FontAwesomeIcon icon={faMagnifyingGlass} />
+            <input type="text" placeholder="Search for a country..." />
+          </div>
+          <div className="dropdown">
+            <select
+              value={filter}
+              defaultValue={"#"}
+              onChange={(e) => setFilter(e.target.value)}
+            >
+              <option value="">Filter by Region</option>
+              <option value="Asia">Asia</option>
+            </select>
+          </div>
         </form>
       </header>
-      <div className="cards-container">
-        {all && <Card deets={all[0]} />}
-      </div>
+      <div className="cards-container">{all && <Card deets={all[0]} />}</div>
     </main>
   );
 };

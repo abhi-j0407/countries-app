@@ -1,6 +1,6 @@
 const Card = ({deets}) => {
   return (
-    <div>{deets}</div>
+    <div>{deets?.name.common}</div>
   )
 }
 

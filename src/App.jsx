@@ -6,7 +6,7 @@ import Country from "./pages/Country";
 
 function App() {
   return (
-    <>
+    <div className="main">
       <Router>
         <Navbar />
         <Routes>
@@ -14,7 +14,7 @@ function App() {
           <Route path="/country" element={<Country />} />
         </Routes>
       </Router>
-    </>
+    </div>
   );
 }
 
