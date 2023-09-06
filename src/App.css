@@ -19,6 +19,7 @@ body {
   line-height: 1.5;
   -webkit-font-smoothing: antialiased;
   margin: auto;
+  background-color: hsl(0, 0%, 98%);
 }
 /*
   5. Improve media defaults
@@ -44,11 +45,11 @@ p, h1, h2, h3, h4, h5, h6 {
   max-width: 1920px;
   width: 100%;
   min-height: 100vh;
+  margin: auto;
   display: flex;
   flex-direction: column;
   font-family: 'Nunito Sans', sans-serif;
   color: black;
-  background-color: hsl(0, 0%, 98%);
 }
 
 /* Navbar */
@@ -114,6 +115,10 @@ main {
           &::placeholder {
             color: inherit;
           }
+
+          &:focus {
+            outline: none;
+          }
         }
       }
 
@@ -139,14 +144,15 @@ main {
 
   .cards-container {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(4, auto);
+    column-gap: 5%;
+    row-gap: 70px;
     /* grid-auto-flow: dense; */
-    row-gap: 50px;
-    width: 100%;
-    border: 1px solid red;
+    margin: auto;
+    max-width: 1360px;
 
     .card {
-      width: 260px;
+      min-width: 260px;
       display: flex;
       flex-direction: column;
       justify-content: space-between;
